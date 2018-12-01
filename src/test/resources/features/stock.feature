@@ -20,10 +20,6 @@ Feature: Stock Price Retrieval
     Given I have the current stock price and the 52 week high and low
     Then I can calculate the current price relative to the 52 week high and low
 
-  Scenario: Calculate earnings per share
-    Given I have the current stock price and number of shares
-    Then I can calculate the earnings per share (EPS)
-
   Scenario: Compare EPS of two stocks
     Given I have the EPS of two stocks
     Then I can determine which company has a higher EPS
