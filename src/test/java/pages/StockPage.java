@@ -1,15 +1,10 @@
 package pages;
 
 import org.openqa.selenium.*;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-
-import java.util.concurrent.TimeUnit;
-import java.util.logging.Logger;
-
+import tests.TestRunner;
 
 public class StockPage {
     private String url;
@@ -25,11 +20,11 @@ public class StockPage {
 
     public StockPage(String symbol) {
         this.symbol = symbol;
+        this.driver = TestRunner.driver;
     }
 
     public void openBrowser(){
-        driver = new ChromeDriver();
-        //driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        //driver = new ChromeDriver();
         driver.manage().window().maximize();
     }
 
@@ -47,11 +42,12 @@ public class StockPage {
 
     public void searchForStock(){
         final String searchXpath = "//*[@id=\"fin-srch-assist\"]/input";
+        final String searchId = "fin-srch-assist";
         WebElement searchBox = new WebDriverWait(driver, 15)
                 .until(ExpectedConditions.presenceOfElementLocated(By.xpath(searchXpath)));
         searchBox.sendKeys(symbol);
         WebDriverWait keysEntered = new WebDriverWait(driver, 10);
-        keysEntered.until(ExpectedConditions.textToBePresentInElementLocated(By.id("fin-srch-assist"), symbol));
+        keysEntered.until(ExpectedConditions.textToBePresentInElementLocated(By.id(searchId), symbol));
         searchBox.submit();
 
     }
@@ -101,7 +97,8 @@ public class StockPage {
     public Double setEarningsPerShare(){
         final String epsXpath = "//*[@id=\"quote-summary\"]/div[2]/table/tbody/tr[4]/td[2]/span";
         WebElement epsElement = new WebDriverWait(driver,10)
-                .until(ExpectedConditions.presenceOfElementLocated(By.xpath("//*[@id=\"quote-summary\"]/div[2]/table/tbody/tr[4]/td[2]/span")));
+                .until(ExpectedConditions.presenceOfElementLocated(
+                        By.xpath("//*[@id=\"quote-summary\"]/div[2]/table/tbody/tr[4]/td[2]/span")));
         earningsPerShare = Double.parseDouble(epsElement.getText());
 
         return earningsPerShare;
