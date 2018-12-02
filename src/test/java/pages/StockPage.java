@@ -1,5 +1,6 @@
 package pages;
 
+import cucumber.api.java.an.E;
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -56,6 +57,10 @@ public class StockPage {
         final String priceXpath = "//*[@id=\"quote-header-info\"]/div[3]/div[1]/div/span[1]";
         WebElement price = new WebDriverWait(driver, 10)
                 .until(ExpectedConditions.presenceOfElementLocated(By.xpath(priceXpath)));
+
+        //data initially can briefly appear as N/A, so we wait until it is not N/A to get the current price
+        WebDriverWait waitForData = new WebDriverWait(driver, 5);
+        waitForData.until(ExpectedConditions.not(ExpectedConditions.textToBePresentInElement(price, "N/A")));
         currentPrice = Double.parseDouble(price.getText());
 
     }
@@ -68,9 +73,13 @@ public class StockPage {
         final String priceRangeXpath = "//*[@id=\"quote-summary\"]/div[1]/table/tbody/tr[6]/td[2]";
         WebElement priceRangeElement = new WebDriverWait(driver, 10)
                 .until(ExpectedConditions.presenceOfElementLocated(By.xpath(priceRangeXpath)));
+
+        //data initially can briefly appear as N/A, so we wait until it is not N/A to get the current price
+        WebDriverWait waitForData = new WebDriverWait(driver, 5);
+        waitForData.until(ExpectedConditions.not(ExpectedConditions.textToBePresentInElement(priceRangeElement, "N/A")));
         String prices = priceRangeElement.getText();
-        Integer mid = prices.indexOf("-");
-        lowestPrice = Double.parseDouble(prices.substring(0, mid-1));
+        int mid = prices.indexOf("-");
+        lowestPrice = Double.parseDouble(prices.substring(0, mid-1).replaceAll(",", ""));
         highestPrice = Double.parseDouble(prices.substring(mid+1, prices.length()));
     }
 
@@ -99,6 +108,9 @@ public class StockPage {
         WebElement epsElement = new WebDriverWait(driver,10)
                 .until(ExpectedConditions.presenceOfElementLocated(
                         By.xpath("//*[@id=\"quote-summary\"]/div[2]/table/tbody/tr[4]/td[2]/span")));
+        
+        WebDriverWait waitForData = new WebDriverWait(driver, 5);
+        waitForData.until(ExpectedConditions.not(ExpectedConditions.textToBePresentInElement(epsElement, "N/A")));
         earningsPerShare = Double.parseDouble(epsElement.getText());
 
         return earningsPerShare;
