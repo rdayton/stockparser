@@ -87,7 +87,7 @@ public class StockPage {
     }
 
     public Integer calculatePercentBelowHigh(){
-        Double percent = (highestPrice-currentPrice) / currentPrice * 100;
+        Double percent = (highestPrice-currentPrice) / highestPrice * 100;
         //percent.intValue();
         return percent.intValue();
     }

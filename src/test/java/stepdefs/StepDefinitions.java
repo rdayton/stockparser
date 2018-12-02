@@ -49,6 +49,7 @@ public class StepDefinitions {
     @Then("I can retrieve the current price")
     public void i_can_retrieve_the_current_price() {
         initialStockPage.setCurrentPrice();
+        System.out.println(initialStockPage.getSymbol() + "'s current price is "+ initialStockPage.getCurrentPrice());
     }
 
     @Given("I am on a given stock’s page")
