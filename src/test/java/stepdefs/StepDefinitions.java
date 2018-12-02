@@ -9,6 +9,7 @@ import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 import pages.StockPage;
 
+
 public class StepDefinitions {
 
     @DataProvider(name = "Symbols")
@@ -47,7 +48,7 @@ public class StepDefinitions {
 
     @Then("I can retrieve the current price")
     public void i_can_retrieve_the_current_price() {
-        initialStockPage.getCurrentPrice();
+        initialStockPage.setCurrentPrice();
     }
 
     @Given("I am on a given stock’s page")
@@ -57,23 +58,30 @@ public class StepDefinitions {
 
     @Then("get the 52 week high and low")
     public void i_can_retrieve_the_week_high_and_low() {
-       initialStockPage.getHighAndLowForYear();
+        initialStockPage.setHighAndLowForYear();
+        System.out.println("The 52 week high is "+ initialStockPage.getHigh());
+        System.out.println("The 52 week low is "+ initialStockPage.getLow());
     }
 
 
     @Then("I can calculate the current price relative to the 52 week high and low")
     public void i_can_calculate_the_current_price_relative_to_the_52_week_high_and_low() {
-        initialStockPage.calculatePercentAboveLow();
-        initialStockPage.calculatePercentBelowHigh();
+        Integer pricePercentageAboveLow = initialStockPage.calculatePercentAboveLow();
+        Integer pricePercentageBelowHigh = initialStockPage.calculatePercentBelowHigh();
+        System.out.println("Today’s price of "+ initialStockPage.getCurrentPrice()
+                +" is "+ pricePercentageBelowHigh + "% lower than the 52 week high and "
+                + pricePercentageAboveLow + "% higher than the 52 week low.");
     }
 
 
     @Given("I have the EPS of two stocks")
     public void i_have_the_EPS_of_two_stocks() {
-        initialEps = initialStockPage.getEarningsPerShare();
+        initialEps = initialStockPage.setEarningsPerShare();
         comparisonPage.goToHomePage();
         comparisonPage.searchForStock();
-        comparisonEps = comparisonPage.getEarningsPerShare();
+        comparisonEps = comparisonPage.setEarningsPerShare();
+        System.out.println(initialStockPage.getSymbol() + " has an EPS of " + initialEps +".");
+        System.out.println(comparisonPage.getSymbol() + " has an EPS of " + comparisonEps +".");
 
     }
 

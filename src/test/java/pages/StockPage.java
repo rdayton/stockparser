@@ -16,7 +16,6 @@ public class StockPage {
     private static WebDriver driver;
     private Double currentPrice;
     private final String STOCK_URL = "https://finance.yahoo.com/";
-    private static Logger log = Logger.getLogger(BasePage.class.getName());
     private Double highestPrice;
     private Double lowestPrice;
     private Double earningsPerShare;
@@ -57,38 +56,59 @@ public class StockPage {
 
     }
 
-    public double getCurrentPrice(){
+    public void setCurrentPrice(){
         String priceXpath = "//*[@id=\"quote-header-info\"]/div[3]/div[1]/div/span[1]";
         WebElement price = new WebDriverWait(driver, 10)
                 .until(ExpectedConditions.presenceOfElementLocated(By.xpath(priceXpath)));
         currentPrice = Double.parseDouble(price.getText());
+
+    }
+
+    public Double getCurrentPrice(){
         return currentPrice;
     }
 
-    public void getHighAndLowForYear(){
+    public void setHighAndLowForYear(){
         String priceRangeXpath = "//*[@id=\"quote-summary\"]/div[1]/table/tbody/tr[6]/td[2]";
         WebElement priceRangeElement = new WebDriverWait(driver, 10)
                 .until(ExpectedConditions.presenceOfElementLocated(By.xpath(priceRangeXpath)));
         String prices = priceRangeElement.getText();
         Integer mid = prices.indexOf("-");
-        highestPrice = Double.parseDouble(prices.substring(0, mid-1));
-        lowestPrice = Double.parseDouble(prices.substring(mid+1, prices.length()));
+        lowestPrice = Double.parseDouble(prices.substring(0, mid-1));
+        highestPrice = Double.parseDouble(prices.substring(mid+1, prices.length()));
     }
 
-    public Double calculatePercentBelowHigh(){
-        return (highestPrice-currentPrice) / currentPrice * 100;
+    public Double getHigh(){
+        return highestPrice;
     }
 
-    public Double calculatePercentAboveLow(){
-        return (currentPrice-lowestPrice) / lowestPrice * 100;
+    public double getLow(){
+        return lowestPrice;
+    }
+
+    public Integer calculatePercentBelowHigh(){
+        Double percent = (highestPrice-currentPrice) / currentPrice * 100;
+        //percent.intValue();
+        return percent.intValue();
+    }
+
+    public Integer calculatePercentAboveLow(){
+        Double percent = (currentPrice-lowestPrice) / lowestPrice * 100;
+        return percent.intValue();
 
     }
 
-    public Double getEarningsPerShare(){
+    public Double setEarningsPerShare(){
         String epsXpath = "//*[@id=\"quote-summary\"]/div[2]/table/tbody/tr[4]/td[2]/span";
         WebElement epsElement = new WebDriverWait(driver,10)
                 .until(ExpectedConditions.presenceOfElementLocated(By.xpath("//*[@id=\"quote-summary\"]/div[2]/table/tbody/tr[4]/td[2]/span")));
         earningsPerShare = Double.parseDouble(epsElement.getText());
+
+        return earningsPerShare;
+
+    }
+
+    public Double getEarningsPerShare(){
         return earningsPerShare;
     }
 }
