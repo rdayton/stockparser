@@ -1,89 +1,90 @@
 package stepdefs;
 
-import cucumber.api.PendingException;
-import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
+import cucumber.api.java.en.And;
 
+import org.testng.annotations.DataProvider;
+import org.testng.annotations.Test;
 import pages.StockPage;
 
 public class StepDefinitions {
 
-    private StockPage stockPage;
+    @DataProvider(name = "Symbols")
 
-    public StepDefinitions(StockPage stockPage){
-        this.stockPage = stockPage;
+    public static Object[][] credentials() {
+        return new Object[][] { { "AAPL", "TSLA" }, { "GOOG", "AMZN" }, {"COF", "BAC"}};
+    }
+
+    private StockPage initialStockPage;
+    private StockPage comparisonPage;
+    private Double initialEps;
+    private Double comparisonEps;
+
+    @Test(dataProvider = "Symbols")
+    public StepDefinitions(){
+        this.initialStockPage = new StockPage("AAPL");
+        this.comparisonPage = new StockPage("TSLA");
     }
 
     @Given("The browser is open")
     public void the_browser_is_open() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new cucumber.api.PendingException();
+        initialStockPage.openBrowser();
     }
 
     @Then("I can navigate to Yahoo Finance")
     public void i_can_navigate_to_Yahoo_Finance() {
-       stockPage.goToHomePage();
+        initialStockPage.goToHomePage();
     }
 
-    @Given("The URL is finance.yahoo.com")
-    public void the_URL_is_finance_yahoo_com() {
-        stockPage.getUrl();
+
+    @And("search for a stock")
+    public void search_for_a_stock() {
+        initialStockPage.searchForStock();
     }
 
-    @When("I enter a stock code \"([^\"]*)\" in the search field")
-    public void i_enter_a_stock_code_in_the_search_field(String symbol) {
-        stockPage.searchForStock(symbol);
-    }
-
-    @Then("I can be directed to the stock’s page")
-    public void i_can_be_directed_to_the_stock_s_page() {
-        stockPage.getUrl();
-    }
-
-    @Given("I am on the given stock’s page")
-    public void i_am_on_the_given_stock_s_page() {
-        stockPage.getUrl();
-    }
 
     @Then("I can retrieve the current price")
     public void i_can_retrieve_the_current_price() {
-        stockPage.getCurrentPrice();
+        initialStockPage.getCurrentPrice();
     }
 
     @Given("I am on a given stock’s page")
     public void i_am_on_a_given_stock_s_page() {
-        stockPage.getUrl();
+        initialStockPage.getUrl();
     }
 
-    @Then("I can retrieve the {int} week high and low")
-    public void i_can_retrieve_the_week_high_and_low(Integer int1) {
-       stockPage.getHighandLowForYear();
+    @Then("get the 52 week high and low")
+    public void i_can_retrieve_the_week_high_and_low() {
+       initialStockPage.getHighAndLowForYear();
     }
 
-    @Given("I have the current stock price and the {int} week high and low")
-    public void i_have_the_current_stock_price_and_the_week_high_and_low(Integer int1) {
-        stockPage.getHighandLowForYear();
-    }
 
-    @Then("I can calculate the current price relative to the {int} week high and low")
-    public void i_can_calculate_the_current_price_relative_to_the_week_high_and_low(Integer int1) {
-        stockPage.calculatePercentAboveLow();
-        stockPage.calculatePercentBelowHigh();
+    @Then("I can calculate the current price relative to the 52 week high and low")
+    public void i_can_calculate_the_current_price_relative_to_the_52_week_high_and_low() {
+        initialStockPage.calculatePercentAboveLow();
+        initialStockPage.calculatePercentBelowHigh();
     }
 
 
     @Given("I have the EPS of two stocks")
     public void i_have_the_EPS_of_two_stocks() {
-        stockPage.getEarningsPerShare();
-        stockPage.goToHomePage();
-        stockPage.searchForStock();
-        stockPage.getEarningsPerShare();
+        initialEps = initialStockPage.getEarningsPerShare();
+        comparisonPage.goToHomePage();
+        comparisonPage.searchForStock();
+        comparisonEps = comparisonPage.getEarningsPerShare();
+
     }
 
     @Then("I can determine which company has a higher EPS")
     public void i_can_determine_which_company_has_a_higher_EPS() {
-        //TODO: Finish
+        if(initialEps > comparisonEps){
+            System.out.println(initialStockPage.getSymbol() + " has higher EPS");
+        } else if (initialEps < comparisonEps){
+            System.out.println(comparisonPage.getSymbol() + " has higher EPS");
+        } else {
+            System.out.println(initialStockPage.getSymbol() + " and "+ comparisonPage.getSymbol() + " have equal EPS");
+        }
     }
 }
