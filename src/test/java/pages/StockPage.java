@@ -46,7 +46,7 @@ public class StockPage {
     }
 
     public void searchForStock(){
-        String searchXpath = "//*[@id=\"fin-srch-assist\"]/input";
+        final String searchXpath = "//*[@id=\"fin-srch-assist\"]/input";
         WebElement searchBox = new WebDriverWait(driver, 15)
                 .until(ExpectedConditions.presenceOfElementLocated(By.xpath(searchXpath)));
         searchBox.sendKeys(symbol);
@@ -57,7 +57,7 @@ public class StockPage {
     }
 
     public void setCurrentPrice(){
-        String priceXpath = "//*[@id=\"quote-header-info\"]/div[3]/div[1]/div/span[1]";
+        final String priceXpath = "//*[@id=\"quote-header-info\"]/div[3]/div[1]/div/span[1]";
         WebElement price = new WebDriverWait(driver, 10)
                 .until(ExpectedConditions.presenceOfElementLocated(By.xpath(priceXpath)));
         currentPrice = Double.parseDouble(price.getText());
@@ -69,7 +69,7 @@ public class StockPage {
     }
 
     public void setHighAndLowForYear(){
-        String priceRangeXpath = "//*[@id=\"quote-summary\"]/div[1]/table/tbody/tr[6]/td[2]";
+        final String priceRangeXpath = "//*[@id=\"quote-summary\"]/div[1]/table/tbody/tr[6]/td[2]";
         WebElement priceRangeElement = new WebDriverWait(driver, 10)
                 .until(ExpectedConditions.presenceOfElementLocated(By.xpath(priceRangeXpath)));
         String prices = priceRangeElement.getText();
@@ -82,24 +82,24 @@ public class StockPage {
         return highestPrice;
     }
 
-    public double getLow(){
+    public Double getLow(){
         return lowestPrice;
     }
 
     public Integer calculatePercentBelowHigh(){
-        Double percent = (highestPrice-currentPrice) / highestPrice * 100;
+        int percent = (int) Math.rint((highestPrice-currentPrice) / highestPrice * 100);
         //percent.intValue();
-        return percent.intValue();
+        return percent;
     }
 
     public Integer calculatePercentAboveLow(){
-        Double percent = (currentPrice-lowestPrice) / lowestPrice * 100;
-        return percent.intValue();
+        int percent = (int) Math.rint((currentPrice-lowestPrice) / lowestPrice * 100);
+        return percent;
 
     }
 
     public Double setEarningsPerShare(){
-        String epsXpath = "//*[@id=\"quote-summary\"]/div[2]/table/tbody/tr[4]/td[2]/span";
+        final String epsXpath = "//*[@id=\"quote-summary\"]/div[2]/table/tbody/tr[4]/td[2]/span";
         WebElement epsElement = new WebDriverWait(driver,10)
                 .until(ExpectedConditions.presenceOfElementLocated(By.xpath("//*[@id=\"quote-summary\"]/div[2]/table/tbody/tr[4]/td[2]/span")));
         earningsPerShare = Double.parseDouble(epsElement.getText());
