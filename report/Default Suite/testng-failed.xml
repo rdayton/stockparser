@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Default Suite]">
+  <test name="stockparser(failed)">
+    <classes>
+      <class name="tests.TestRunner">
+        <methods>
+          <include name="scenario" invocation-numbers="2"/>
+          <include name="tearDownClass"/>
+          <include name="setUpClass"/>
+        </methods>
+      </class> <!-- tests.TestRunner -->
+    </classes>
+  </test> <!-- stockparser(failed) -->
+</suite> <!-- Failed suite [Default Suite] -->

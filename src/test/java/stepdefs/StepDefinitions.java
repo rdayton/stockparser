@@ -5,6 +5,7 @@ import cucumber.api.java.en.Then;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.When;
 import org.testng.annotations.Test;
+import org.testng.Reporter;
 
 import pages.StockPage;
 
@@ -21,7 +22,7 @@ public class StepDefinitions {
     public void i_have_stocks_and_I_want_to_compare(String initial, String compare) {
         this.initialStockPage = new StockPage(initial);
         this.comparisonPage = new StockPage(compare);
-        System.out.println("========= Comparing "+ initial + " and "+ compare + " =========");
+        Reporter.log("========= Comparing "+ initial + " and "+ compare + " =========<br/>");
     }
 
 
@@ -45,7 +46,7 @@ public class StepDefinitions {
     @Then("I can retrieve the current price")
     public void i_can_retrieve_the_current_price() {
         initialStockPage.setCurrentPrice();
-        System.out.println(initialStockPage.getSymbol() + "'s current price is "+ initialStockPage.getCurrentPrice());
+        Reporter.log(initialStockPage.getSymbol() + "'s current price is "+ initialStockPage.getCurrentPrice()+"<br/>");
     }
 
     @When("I am on a given stock’s page")
@@ -56,8 +57,8 @@ public class StepDefinitions {
     @And("get the 52 week high and low")
     public void i_can_retrieve_the_week_high_and_low() {
         initialStockPage.setHighAndLowForYear();
-        System.out.println("The 52 week high is "+ initialStockPage.getHigh());
-        System.out.println("The 52 week low is "+ initialStockPage.getLow());
+        Reporter.log("The 52 week high is "+ initialStockPage.getHigh()+"<br/>");
+        Reporter.log("The 52 week low is "+ initialStockPage.getLow()+"<br/>");
     }
 
 
@@ -65,9 +66,9 @@ public class StepDefinitions {
     public void i_can_calculate_the_current_price_relative_to_the_52_week_high_and_low() {
         Integer pricePercentageAboveLow = initialStockPage.calculatePercentAboveLow();
         Integer pricePercentageBelowHigh = initialStockPage.calculatePercentBelowHigh();
-        System.out.println("Today’s price of "+ initialStockPage.getCurrentPrice()
+        Reporter.log("Today’s price of "+ initialStockPage.getCurrentPrice()
                 +" is "+ pricePercentageBelowHigh + "% lower than the 52 week high and "
-                + pricePercentageAboveLow + "% higher than the 52 week low.");
+                + pricePercentageAboveLow + "% higher than the 52 week low.<br/>");
     }
 
 
@@ -77,19 +78,19 @@ public class StepDefinitions {
         comparisonPage.goToHomePage();
         comparisonPage.searchForStock();
         comparisonEps = comparisonPage.setEarningsPerShare();
-        System.out.println(initialStockPage.getSymbol() + " has an EPS of " + initialEps +".");
-        System.out.println(comparisonPage.getSymbol() + " has an EPS of " + comparisonEps +".");
+        Reporter.log(initialStockPage.getSymbol() + " has an EPS of " + initialEps +".<br/>");
+        Reporter.log(comparisonPage.getSymbol() + " has an EPS of " + comparisonEps +".<br/>");
 
     }
 
     @Then("I can determine which company has a higher EPS")
     public void i_can_determine_which_company_has_a_higher_EPS() {
         if(initialEps > comparisonEps){
-            System.out.println(initialStockPage.getSymbol() + " has higher EPS");
+            Reporter.log(initialStockPage.getSymbol() + " has higher EPS<br/>");
         } else if (initialEps < comparisonEps){
-            System.out.println(comparisonPage.getSymbol() + " has higher EPS");
+            Reporter.log(comparisonPage.getSymbol() + " has higher EPS<br/>");
         } else {
-            System.out.println(initialStockPage.getSymbol() + " and "+ comparisonPage.getSymbol() + " have equal EPS");
+            Reporter.log(initialStockPage.getSymbol() + " and "+ comparisonPage.getSymbol() + " have equal EPS<br/>");
         }
     }
 }
