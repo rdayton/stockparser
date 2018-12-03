@@ -68,25 +68,25 @@
       <![CDATA[COF has an EPS of 7.16.<br/>]]>
     </line>
     <line>
-      <![CDATA[BAC has an EPS of 17.03.<br/>]]>
+      <![CDATA[BAC has an EPS of 2.1.<br/>]]>
     </line>
     <line>
-      <![CDATA[BAC has higher EPS<br/>]]>
+      <![CDATA[COF has higher EPS<br/>]]>
     </line>
   </reporter-output>
-  <suite name="Default Suite" duration-ms="130670" started-at="2018-12-03T02:08:58Z" finished-at="2018-12-03T02:11:09Z">
+  <suite name="Default Suite" duration-ms="69756" started-at="2018-12-03T02:40:20Z" finished-at="2018-12-03T02:41:29Z">
     <groups>
       <group name="Cucumber">
         <method signature="TestRunner.scenario(cucumber.api.testng.PickleEventWrapper, cucumber.api.testng.CucumberFeatureWrapper)[pri:0, instance:tests.TestRunner@6debcae2]" name="scenario" class="tests.TestRunner"/>
       </group> <!-- Cucumber -->
     </groups>
-    <test name="stockparser" duration-ms="130670" started-at="2018-12-03T02:08:58Z" finished-at="2018-12-03T02:11:09Z">
+    <test name="stockparser" duration-ms="69756" started-at="2018-12-03T02:40:20Z" finished-at="2018-12-03T02:41:29Z">
       <class name="tests.TestRunner">
-        <test-method status="PASS" signature="setUpClass()[pri:0, instance:tests.TestRunner@6debcae2]" name="setUpClass" is-config="true" duration-ms="3879" started-at="2018-12-02T21:08:58Z" finished-at="2018-12-02T21:09:02Z">
+        <test-method status="PASS" signature="setUpClass()[pri:0, instance:tests.TestRunner@6debcae2]" name="setUpClass" is-config="true" duration-ms="3322" started-at="2018-12-02T21:40:20Z" finished-at="2018-12-02T21:40:23Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpClass -->
-        <test-method status="PASS" signature="scenario(cucumber.api.testng.PickleEventWrapper, cucumber.api.testng.CucumberFeatureWrapper)[pri:0, instance:tests.TestRunner@6debcae2]" name="scenario" duration-ms="49629" started-at="2018-12-02T21:09:02Z" description="Runs Cucumber Feature" data-provider="scenarios" finished-at="2018-12-02T21:09:52Z">
+        <test-method status="PASS" signature="scenario(cucumber.api.testng.PickleEventWrapper, cucumber.api.testng.CucumberFeatureWrapper)[pri:0, instance:tests.TestRunner@6debcae2]" name="scenario" duration-ms="23947" started-at="2018-12-02T21:40:23Z" description="Runs Cucumber Feature" data-provider="scenarios" finished-at="2018-12-02T21:40:47Z">
           <params>
             <param index="0">
               <value>
@@ -126,7 +126,7 @@
             </line>
           </reporter-output>
         </test-method> <!-- scenario -->
-        <test-method status="PASS" signature="scenario(cucumber.api.testng.PickleEventWrapper, cucumber.api.testng.CucumberFeatureWrapper)[pri:0, instance:tests.TestRunner@6debcae2]" name="scenario" duration-ms="39186" started-at="2018-12-02T21:09:52Z" description="Runs Cucumber Feature" data-provider="scenarios" finished-at="2018-12-02T21:10:31Z">
+        <test-method status="PASS" signature="scenario(cucumber.api.testng.PickleEventWrapper, cucumber.api.testng.CucumberFeatureWrapper)[pri:0, instance:tests.TestRunner@6debcae2]" name="scenario" duration-ms="22073" started-at="2018-12-02T21:40:47Z" description="Runs Cucumber Feature" data-provider="scenarios" finished-at="2018-12-02T21:41:09Z">
           <params>
             <param index="0">
               <value>
@@ -166,7 +166,7 @@
             </line>
           </reporter-output>
         </test-method> <!-- scenario -->
-        <test-method status="PASS" signature="scenario(cucumber.api.testng.PickleEventWrapper, cucumber.api.testng.CucumberFeatureWrapper)[pri:0, instance:tests.TestRunner@6debcae2]" name="scenario" duration-ms="37046" started-at="2018-12-02T21:10:31Z" description="Runs Cucumber Feature" data-provider="scenarios" finished-at="2018-12-02T21:11:08Z">
+        <test-method status="PASS" signature="scenario(cucumber.api.testng.PickleEventWrapper, cucumber.api.testng.CucumberFeatureWrapper)[pri:0, instance:tests.TestRunner@6debcae2]" name="scenario" duration-ms="20208" started-at="2018-12-02T21:41:09Z" description="Runs Cucumber Feature" data-provider="scenarios" finished-at="2018-12-02T21:41:29Z">
           <params>
             <param index="0">
               <value>
@@ -199,14 +199,14 @@
               <![CDATA[COF has an EPS of 7.16.<br/>]]>
             </line>
             <line>
-              <![CDATA[BAC has an EPS of 17.03.<br/>]]>
+              <![CDATA[BAC has an EPS of 2.1.<br/>]]>
             </line>
             <line>
-              <![CDATA[BAC has higher EPS<br/>]]>
+              <![CDATA[COF has higher EPS<br/>]]>
             </line>
           </reporter-output>
         </test-method> <!-- scenario -->
-        <test-method status="PASS" signature="tearDownClass()[pri:0, instance:tests.TestRunner@6debcae2]" name="tearDownClass" is-config="true" duration-ms="870" started-at="2018-12-02T21:11:08Z" finished-at="2018-12-02T21:11:09Z">
+        <test-method status="PASS" signature="tearDownClass()[pri:0, instance:tests.TestRunner@6debcae2]" name="tearDownClass" is-config="true" duration-ms="160" started-at="2018-12-02T21:41:29Z" finished-at="2018-12-02T21:41:29Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDownClass -->

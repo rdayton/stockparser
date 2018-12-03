@@ -50,7 +50,7 @@ public class StockPage {
 
         //prevent search from starting before all keys are entered
         WebDriverWait keysEntered = new WebDriverWait(driver, 10);
-        keysEntered.until(ExpectedConditions.textToBePresentInElementLocated(By.id(searchId), symbol));
+        keysEntered.until(ExpectedConditions.textToBePresentInElementValue(By.xpath(searchXpath), symbol));
         searchBox.submit();
 
     }

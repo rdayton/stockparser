@@ -22,7 +22,7 @@ public class StepDefinitions {
     public void i_have_stocks_and_I_want_to_compare(String initial, String compare) {
         this.initialStockPage = new StockPage(initial);
         this.comparisonPage = new StockPage(compare);
-        Reporter.log("========= Comparing "+ initial + " and "+ compare + " =========<br/>");
+        Reporter.log("========= Comparing "+ initial + " and "+ compare + " =========<br/>", true);
     }
 
 
@@ -46,7 +46,7 @@ public class StepDefinitions {
     @Then("I can retrieve the current price")
     public void i_can_retrieve_the_current_price() {
         initialStockPage.setCurrentPrice();
-        Reporter.log(initialStockPage.getSymbol() + "'s current price is "+ initialStockPage.getCurrentPrice()+"<br/>");
+        Reporter.log(initialStockPage.getSymbol() + "'s current price is "+ initialStockPage.getCurrentPrice()+"<br/>", true);
     }
 
     @When("I am on a given stock’s page")
@@ -57,8 +57,8 @@ public class StepDefinitions {
     @And("get the 52 week high and low")
     public void i_can_retrieve_the_week_high_and_low() {
         initialStockPage.setHighAndLowForYear();
-        Reporter.log("The 52 week high is "+ initialStockPage.getHigh()+"<br/>");
-        Reporter.log("The 52 week low is "+ initialStockPage.getLow()+"<br/>");
+        Reporter.log("The 52 week high is "+ initialStockPage.getHigh()+"<br/>", true);
+        Reporter.log("The 52 week low is "+ initialStockPage.getLow()+"<br/>", true);
     }
 
 
@@ -68,7 +68,7 @@ public class StepDefinitions {
         Integer pricePercentageBelowHigh = initialStockPage.calculatePercentBelowHigh();
         Reporter.log("Today’s price of "+ initialStockPage.getCurrentPrice()
                 +" is "+ pricePercentageBelowHigh + "% lower than the 52 week high and "
-                + pricePercentageAboveLow + "% higher than the 52 week low.<br/>");
+                + pricePercentageAboveLow + "% higher than the 52 week low.<br/>",true);
     }
 
 
@@ -78,8 +78,8 @@ public class StepDefinitions {
         comparisonPage.goToHomePage();
         comparisonPage.searchForStock();
         comparisonEps = comparisonPage.setEarningsPerShare();
-        Reporter.log(initialStockPage.getSymbol() + " has an EPS of " + initialEps +".<br/>");
-        Reporter.log(comparisonPage.getSymbol() + " has an EPS of " + comparisonEps +".<br/>");
+        Reporter.log(initialStockPage.getSymbol() + " has an EPS of " + initialEps +".<br/>", true);
+        Reporter.log(comparisonPage.getSymbol() + " has an EPS of " + comparisonEps +".<br/>", true);
 
     }
 
@@ -90,7 +90,7 @@ public class StepDefinitions {
         } else if (initialEps < comparisonEps){
             Reporter.log(comparisonPage.getSymbol() + " has higher EPS<br/>");
         } else {
-            Reporter.log(initialStockPage.getSymbol() + " and "+ comparisonPage.getSymbol() + " have equal EPS<br/>");
+            Reporter.log(initialStockPage.getSymbol() + " and "+ comparisonPage.getSymbol() + " have equal EPS<br/>", true);
         }
     }
 }
