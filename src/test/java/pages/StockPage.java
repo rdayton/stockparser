@@ -42,15 +42,15 @@ public class StockPage {
     }
 
     public void searchForStock(){
-        final String searchXpath = "//*[@id=\"fin-srch-assist\"]/input";
+        final String searchSelector = "#fin-srch-assist > input";
         final String searchId = "fin-srch-assist";
         WebElement searchBox = new WebDriverWait(driver, 15)
-                .until(ExpectedConditions.presenceOfElementLocated(By.xpath(searchXpath)));
+                .until(ExpectedConditions.presenceOfElementLocated(By.cssSelector(searchSelector)));
         searchBox.sendKeys(symbol);
 
         //prevent search from starting before all keys are entered
         WebDriverWait keysEntered = new WebDriverWait(driver, 10);
-        keysEntered.until(ExpectedConditions.textToBePresentInElementValue(By.xpath(searchXpath), symbol));
+        keysEntered.until(ExpectedConditions.textToBePresentInElementValue(By.cssSelector(searchSelector), symbol));
         searchBox.submit();
 
     }
