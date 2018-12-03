@@ -1,20 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="1" total="3" passed="2">
+<testng-results skipped="0" failed="0" total="3" passed="3">
   <reporter-output>
     <line>
       <![CDATA[========= Comparing GOOG and NFLX =========<br/>]]>
     </line>
     <line>
-      <![CDATA[GOOG's current price is 0.29<br/>]]>
+      <![CDATA[GOOG's current price is 1094.43<br/>]]>
     </line>
     <line>
-      <![CDATA[The 52 week high is 0.52<br/>]]>
+      <![CDATA[The 52 week high is 1273.89<br/>]]>
     </line>
     <line>
-      <![CDATA[The 52 week low is 0.244<br/>]]>
+      <![CDATA[The 52 week low is 980.64<br/>]]>
     </line>
     <line>
-      <![CDATA[Today’s price of 0.29 is 44% lower than the 52 week high and 19% higher than the 52 week low.<br/>]]>
+      <![CDATA[Today’s price of 1094.43 is 14% lower than the 52 week high and 12% higher than the 52 week low.<br/>]]>
+    </line>
+    <line>
+      <![CDATA[GOOG has an EPS of 26.65.<br/>]]>
+    </line>
+    <line>
+      <![CDATA[NFLX has an EPS of 2.8.<br/>]]>
+    </line>
+    <line>
+      <![CDATA[GOOG has higher EPS<br/>]]>
     </line>
     <line>
       <![CDATA[========= Comparing AAPL and TSLA =========<br/>]]>
@@ -65,19 +74,19 @@
       <![CDATA[COF has higher EPS<br/>]]>
     </line>
   </reporter-output>
-  <suite name="Default Suite" duration-ms="93812" started-at="2018-12-03T02:49:16Z" finished-at="2018-12-03T02:50:50Z">
+  <suite name="Default Suite" duration-ms="96724" started-at="2018-12-03T02:51:24Z" finished-at="2018-12-03T02:53:01Z">
     <groups>
       <group name="Cucumber">
         <method signature="TestRunner.scenario(cucumber.api.testng.PickleEventWrapper, cucumber.api.testng.CucumberFeatureWrapper)[pri:0, instance:tests.TestRunner@6debcae2]" name="scenario" class="tests.TestRunner"/>
       </group> <!-- Cucumber -->
     </groups>
-    <test name="stockparser" duration-ms="93812" started-at="2018-12-03T02:49:16Z" finished-at="2018-12-03T02:50:50Z">
+    <test name="stockparser" duration-ms="96724" started-at="2018-12-03T02:51:24Z" finished-at="2018-12-03T02:53:01Z">
       <class name="tests.TestRunner">
-        <test-method status="PASS" signature="setUpClass()[pri:0, instance:tests.TestRunner@6debcae2]" name="setUpClass" is-config="true" duration-ms="3369" started-at="2018-12-02T21:49:16Z" finished-at="2018-12-02T21:49:19Z">
+        <test-method status="PASS" signature="setUpClass()[pri:0, instance:tests.TestRunner@6debcae2]" name="setUpClass" is-config="true" duration-ms="3613" started-at="2018-12-02T21:51:24Z" finished-at="2018-12-02T21:51:28Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpClass -->
-        <test-method status="FAIL" signature="scenario(cucumber.api.testng.PickleEventWrapper, cucumber.api.testng.CucumberFeatureWrapper)[pri:0, instance:tests.TestRunner@6debcae2]" name="scenario" duration-ms="53817" started-at="2018-12-02T21:49:19Z" description="Runs Cucumber Feature" data-provider="scenarios" finished-at="2018-12-02T21:50:13Z">
+        <test-method status="PASS" signature="scenario(cucumber.api.testng.PickleEventWrapper, cucumber.api.testng.CucumberFeatureWrapper)[pri:0, instance:tests.TestRunner@6debcae2]" name="scenario" duration-ms="36955" started-at="2018-12-02T21:51:28Z" description="Runs Cucumber Feature" data-provider="scenarios" finished-at="2018-12-02T21:52:05Z">
           <params>
             <param index="0">
               <value>
@@ -90,49 +99,34 @@
               </value>
             </param>
           </params>
-          <exception class="org.openqa.selenium.TimeoutException">
-            <message>
-              <![CDATA[Expected condition failed: waiting for condition to not be valid: text ('N/A') to be present in element found by By.xpath: //*[@id="quote-summary"]/div[2]/table/tbody/tr[4]/td[2]/span (tried for 5 second(s) with 500 milliseconds interval)
-Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
-System info: host: 'BOB-PC', ip: '192.168.29.176', os.name: 'Windows 8.1', os.arch: 'amd64', os.version: '6.3', java.version: '1.8.0_25'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 71.0.3578.30 (5b78d137d0b64..., userDataDir: C:\Users\test\AppData\Local...}, cssSelectorsEnabled: true, databaseEnabled: false, goog:chromeOptions: {debuggerAddress: localhost:58477}, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, rotatable: false, setWindowRect: true, takesHeapSnapshot: true, takesScreenshot: true, unexpectedAlertBehaviour: , unhandledPromptBehavior: , version: 70.0.3538.110, webStorageEnabled: true}
-Session ID: 37751f46b48c319584aaa2f9130fae4c]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for condition to not be valid: text ('N/A') to be present in element found by By.xpath: //*[@id="quote-summary"]/div[2]/table/tbody/tr[4]/td[2]/span (tried for 5 second(s) with 500 milliseconds interval)
-Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
-System info: host: 'BOB-PC', ip: '192.168.29.176', os.name: 'Windows 8.1', os.arch: 'amd64', os.version: '6.3', java.version: '1.8.0_25'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 71.0.3578.30 (5b78d137d0b64..., userDataDir: C:\Users\test\AppData\Local...}, cssSelectorsEnabled: true, databaseEnabled: false, goog:chromeOptions: {debuggerAddress: localhost:58477}, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, rotatable: false, setWindowRect: true, takesHeapSnapshot: true, takesScreenshot: true, unexpectedAlertBehaviour: , unhandledPromptBehavior: , version: 70.0.3538.110, webStorageEnabled: true}
-Session ID: 37751f46b48c319584aaa2f9130fae4c
-	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:95)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:272)
-	at pages.StockPage.setEarningsPerShare(StockPage.java:119)
-	at stepdefs.StepDefinitions.i_have_the_EPS_of_two_stocks(StepDefinitions.java:77)
-	at ✽.I have the EPS of two stocks(src/test/resources/features/stock.feature:11)
-]]>
-            </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.TimeoutException -->
           <reporter-output>
             <line>
               <![CDATA[========= Comparing GOOG and NFLX =========<br/>]]>
             </line>
             <line>
-              <![CDATA[GOOG's current price is 0.29<br/>]]>
+              <![CDATA[GOOG's current price is 1094.43<br/>]]>
             </line>
             <line>
-              <![CDATA[The 52 week high is 0.52<br/>]]>
+              <![CDATA[The 52 week high is 1273.89<br/>]]>
             </line>
             <line>
-              <![CDATA[The 52 week low is 0.244<br/>]]>
+              <![CDATA[The 52 week low is 980.64<br/>]]>
             </line>
             <line>
-              <![CDATA[Today’s price of 0.29 is 44% lower than the 52 week high and 19% higher than the 52 week low.<br/>]]>
+              <![CDATA[Today’s price of 1094.43 is 14% lower than the 52 week high and 12% higher than the 52 week low.<br/>]]>
+            </line>
+            <line>
+              <![CDATA[GOOG has an EPS of 26.65.<br/>]]>
+            </line>
+            <line>
+              <![CDATA[NFLX has an EPS of 2.8.<br/>]]>
+            </line>
+            <line>
+              <![CDATA[GOOG has higher EPS<br/>]]>
             </line>
           </reporter-output>
         </test-method> <!-- scenario -->
-        <test-method status="PASS" signature="scenario(cucumber.api.testng.PickleEventWrapper, cucumber.api.testng.CucumberFeatureWrapper)[pri:0, instance:tests.TestRunner@6debcae2]" name="scenario" duration-ms="19491" started-at="2018-12-02T21:50:13Z" description="Runs Cucumber Feature" data-provider="scenarios" finished-at="2018-12-02T21:50:33Z">
+        <test-method status="PASS" signature="scenario(cucumber.api.testng.PickleEventWrapper, cucumber.api.testng.CucumberFeatureWrapper)[pri:0, instance:tests.TestRunner@6debcae2]" name="scenario" duration-ms="30185" started-at="2018-12-02T21:52:05Z" description="Runs Cucumber Feature" data-provider="scenarios" finished-at="2018-12-02T21:52:35Z">
           <params>
             <param index="0">
               <value>
@@ -172,7 +166,7 @@ Session ID: 37751f46b48c319584aaa2f9130fae4c
             </line>
           </reporter-output>
         </test-method> <!-- scenario -->
-        <test-method status="PASS" signature="scenario(cucumber.api.testng.PickleEventWrapper, cucumber.api.testng.CucumberFeatureWrapper)[pri:0, instance:tests.TestRunner@6debcae2]" name="scenario" duration-ms="16998" started-at="2018-12-02T21:50:33Z" description="Runs Cucumber Feature" data-provider="scenarios" finished-at="2018-12-02T21:50:50Z">
+        <test-method status="PASS" signature="scenario(cucumber.api.testng.PickleEventWrapper, cucumber.api.testng.CucumberFeatureWrapper)[pri:0, instance:tests.TestRunner@6debcae2]" name="scenario" duration-ms="25875" started-at="2018-12-02T21:52:35Z" description="Runs Cucumber Feature" data-provider="scenarios" finished-at="2018-12-02T21:53:01Z">
           <params>
             <param index="0">
               <value>
@@ -212,7 +206,7 @@ Session ID: 37751f46b48c319584aaa2f9130fae4c
             </line>
           </reporter-output>
         </test-method> <!-- scenario -->
-        <test-method status="PASS" signature="tearDownClass()[pri:0, instance:tests.TestRunner@6debcae2]" name="tearDownClass" is-config="true" duration-ms="78" started-at="2018-12-02T21:50:50Z" finished-at="2018-12-02T21:50:50Z">
+        <test-method status="PASS" signature="tearDownClass()[pri:0, instance:tests.TestRunner@6debcae2]" name="tearDownClass" is-config="true" duration-ms="39" started-at="2018-12-02T21:53:01Z" finished-at="2018-12-02T21:53:01Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDownClass -->

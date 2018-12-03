@@ -55,11 +55,11 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>stockparser</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>2/1/0</td>
+<td>Tests passed/Failed/Skipped:</td><td>3/0/0</td>
 </tr><tr>
-<td>Started on:</td><td>Sun Dec 02 21:49:16 EST 2018</td>
+<td>Started on:</td><td>Sun Dec 02 21:51:24 EST 2018</td>
 </tr>
-<tr><td>Total time:</td><td>93 seconds (93812 ms)</td>
+<tr><td>Total time:</td><td>96 seconds (96724 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -67,8 +67,8 @@ function toggleAllBoxes() {
 </tr>
 </table><p/>
 <small><i>(Hover the method name to see the test class name)</i></small><p/>
-<table width='100%' border='1' class='invocation-failed'>
-<tr><td colspan='4' align='center'><b>FAILED TESTS</b></td></tr>
+<table width='100%' border='1' class='invocation-passed'>
+<tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
 <tr><td><b>Test method</b></td>
 <td width="30%"><b>Exception</b></td>
 <td width="10%"><b>Time (seconds)</b></td>
@@ -81,52 +81,24 @@ function toggleAllBoxes() {
 <a href="#Output-2052910813" onClick="toggleAllBoxes();">Show all outputs</a>
 <div class='log' id="Output-2052910813">
 ========= Comparing GOOG and NFLX =========<br/><br/>
-GOOG's current price is 0.29<br/><br/>
-The 52 week high is 0.52<br/><br/>
-The 52 week low is 0.244<br/><br/>
-Today’s price of 0.29 is 44% lower than the 52 week high and 19% higher than the 52 week low.<br/><br/>
+GOOG's current price is 1094.43<br/><br/>
+The 52 week high is 1273.89<br/><br/>
+The 52 week low is 980.64<br/><br/>
+Today’s price of 1094.43 is 14% lower than the 52 week high and 12% higher than the 52 week low.<br/><br/>
+GOOG has an EPS of 26.65.<br/><br/>
+NFLX has an EPS of 2.8.<br/><br/>
+GOOG has higher EPS<br/><br/>
 </div>
 </td>
-<td><div><pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for condition to not be valid: text (&apos;N/A&apos;) to be present in element found by By.xpath: //*[@id=&quot;quote-summary&quot;]/div[2]/table/tbody/tr[4]/td[2]/span (tried for 5 second(s) with 500 milliseconds interval)
-Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
-System info: host: &apos;BOB-PC&apos;, ip: &apos;192.168.29.176&apos;, os.name: &apos;Windows 8.1&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.3&apos;, java.version: &apos;1.8.0_25&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 71.0.3578.30 (5b78d137d0b64..., userDataDir: C:\Users\test\AppData\Local...}, cssSelectorsEnabled: true, databaseEnabled: false, goog:chromeOptions: {debuggerAddress: localhost:58477}, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, rotatable: false, setWindowRect: true, takesHeapSnapshot: true, takesScreenshot: true, unexpectedAlertBehaviour: , unhandledPromptBehavior: , version: 70.0.3538.110, webStorageEnabled: true}
-Session ID: 37751f46b48c319584aaa2f9130fae4c
-	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:95)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:272)
-	at pages.StockPage.setEarningsPerShare(StockPage.java:119)
-	at stepdefs.StepDefinitions.i_have_the_EPS_of_two_stocks(StepDefinitions.java:77)
-	at ✽.I have the EPS of two stocks(src/test/resources/features/stock.feature:11)
-</pre></div><a href='#' onClick='toggleBox("stack-trace2052910813", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace2052910813'><pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for condition to not be valid: text (&apos;N/A&apos;) to be present in element found by By.xpath: //*[@id=&quot;quote-summary&quot;]/div[2]/table/tbody/tr[4]/td[2]/span (tried for 5 second(s) with 500 milliseconds interval)
-Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
-System info: host: &apos;BOB-PC&apos;, ip: &apos;192.168.29.176&apos;, os.name: &apos;Windows 8.1&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.3&apos;, java.version: &apos;1.8.0_25&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 71.0.3578.30 (5b78d137d0b64..., userDataDir: C:\Users\test\AppData\Local...}, cssSelectorsEnabled: true, databaseEnabled: false, goog:chromeOptions: {debuggerAddress: localhost:58477}, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, rotatable: false, setWindowRect: true, takesHeapSnapshot: true, takesScreenshot: true, unexpectedAlertBehaviour: , unhandledPromptBehavior: , version: 70.0.3538.110, webStorageEnabled: true}
-Session ID: 37751f46b48c319584aaa2f9130fae4c
-	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:95)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:272)
-	at pages.StockPage.setEarningsPerShare(StockPage.java:119)
-	at stepdefs.StepDefinitions.i_have_the_EPS_of_two_stocks(StepDefinitions.java:77)
-	at ✽.I have the EPS of two stocks(src/test/resources/features/stock.feature:11)
-</pre></div></td>
-<td>53</td>
+<td></td>
+<td>36</td>
 <td>tests.TestRunner@6debcae2</td></tr>
-</table><p>
-<table width='100%' border='1' class='invocation-passed'>
-<tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
-<tr><td><b>Test method</b></td>
-<td width="30%"><b>Exception</b></td>
-<td width="10%"><b>Time (seconds)</b></td>
-<td><b>Instance</b></td>
-</tr>
 <tr>
 <td title='tests.TestRunner.scenario()'><b>scenario</b><br>Test class: tests.TestRunner<br>Test method: Runs Cucumber Feature<br>Parameters: "Comparing two stocks", "Stock Price Parsing"<br/>
-<a href="#Output-795011696" onClick='toggleBox("Output-795011696", this, "Show output", "Hide output");'>Show output</a>
+<a href="#Output-1234586997" onClick='toggleBox("Output-1234586997", this, "Show output", "Hide output");'>Show output</a>
 
-<a href="#Output-795011696" onClick="toggleAllBoxes();">Show all outputs</a>
-<div class='log' id="Output-795011696">
+<a href="#Output-1234586997" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-1234586997">
 ========= Comparing AAPL and TSLA =========<br/><br/>
 AAPL's current price is 178.58<br/><br/>
 The 52 week high is 233.47<br/><br/>
@@ -138,14 +110,14 @@ AAPL has higher EPS<br/><br/>
 </div>
 </td>
 <td></td>
-<td>19</td>
+<td>30</td>
 <td>tests.TestRunner@6debcae2</td></tr>
 <tr>
 <td title='tests.TestRunner.scenario()'><b>scenario</b><br>Test class: tests.TestRunner<br>Test method: Runs Cucumber Feature<br>Parameters: "Comparing two stocks", "Stock Price Parsing"<br/>
-<a href="#Output-1238616099" onClick='toggleBox("Output-1238616099", this, "Show output", "Hide output");'>Show output</a>
+<a href="#Output-335107734" onClick='toggleBox("Output-335107734", this, "Show output", "Hide output");'>Show output</a>
 
-<a href="#Output-1238616099" onClick="toggleAllBoxes();">Show all outputs</a>
-<div class='log' id="Output-1238616099">
+<a href="#Output-335107734" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-335107734">
 ========= Comparing COF and BAC =========<br/><br/>
 COF's current price is 89.68<br/><br/>
 The 52 week high is 106.5<br/><br/>
@@ -157,7 +129,7 @@ COF has higher EPS<br/><br/>
 </div>
 </td>
 <td></td>
-<td>16</td>
+<td>25</td>
 <td>tests.TestRunner@6debcae2</td></tr>
 </table><p>
 </body>
