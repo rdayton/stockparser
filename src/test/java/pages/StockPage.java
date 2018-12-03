@@ -43,14 +43,14 @@ public class StockPage {
 
     public void searchForStock(){
         final String searchSelector = "#fin-srch-assist > input";
-        final String searchId = "fin-srch-assist";
         WebElement searchBox = new WebDriverWait(driver, 15)
                 .until(ExpectedConditions.presenceOfElementLocated(By.cssSelector(searchSelector)));
         searchBox.sendKeys(symbol);
 
         //prevent search from starting before all keys are entered
+        //TODO: Find better way to wait for exact text
         WebDriverWait keysEntered = new WebDriverWait(driver, 10);
-        keysEntered.until(ExpectedConditions.textToBePresentInElementValue(By.cssSelector(searchSelector), symbol));
+        keysEntered.until(ExpectedConditions.textToBePresentInElementValue( By.cssSelector(searchSelector), symbol));
         searchBox.submit();
 
     }

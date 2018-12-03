@@ -5,25 +5,25 @@
       <![CDATA[========= Comparing GOOG and NFLX =========<br/>]]>
     </line>
     <line>
-      <![CDATA[GOOG's current price is 1094.43<br/>]]>
+      <![CDATA[GOOG's current price is 30.38<br/>]]>
     </line>
     <line>
-      <![CDATA[The 52 week high is 1273.89<br/>]]>
+      <![CDATA[The 52 week high is 34.79<br/>]]>
     </line>
     <line>
-      <![CDATA[The 52 week low is 980.64<br/>]]>
+      <![CDATA[The 52 week low is 26.46<br/>]]>
     </line>
     <line>
-      <![CDATA[Today’s price of 1094.43 is 14% lower than the 52 week high and 12% higher than the 52 week low.<br/>]]>
+      <![CDATA[Today’s price of 30.38 is 13% lower than the 52 week high and 15% higher than the 52 week low.<br/>]]>
     </line>
     <line>
-      <![CDATA[GOOG has an EPS of 26.65.<br/>]]>
+      <![CDATA[GOOG has an EPS of 1.39.<br/>]]>
     </line>
     <line>
       <![CDATA[NFLX has an EPS of 2.8.<br/>]]>
     </line>
     <line>
-      <![CDATA[GOOG has higher EPS<br/>]]>
+      <![CDATA[NFLX has higher EPS<br/>]]>
     </line>
     <line>
       <![CDATA[========= Comparing AAPL and TSLA =========<br/>]]>
@@ -74,19 +74,19 @@
       <![CDATA[COF has higher EPS<br/>]]>
     </line>
   </reporter-output>
-  <suite name="Default Suite" duration-ms="96724" started-at="2018-12-03T02:51:24Z" finished-at="2018-12-03T02:53:01Z">
+  <suite name="Default Suite" duration-ms="110061" started-at="2018-12-03T03:23:48Z" finished-at="2018-12-03T03:25:38Z">
     <groups>
       <group name="Cucumber">
         <method signature="TestRunner.scenario(cucumber.api.testng.PickleEventWrapper, cucumber.api.testng.CucumberFeatureWrapper)[pri:0, instance:tests.TestRunner@6debcae2]" name="scenario" class="tests.TestRunner"/>
       </group> <!-- Cucumber -->
     </groups>
-    <test name="stockparser" duration-ms="96724" started-at="2018-12-03T02:51:24Z" finished-at="2018-12-03T02:53:01Z">
+    <test name="stockparser" duration-ms="110061" started-at="2018-12-03T03:23:48Z" finished-at="2018-12-03T03:25:38Z">
       <class name="tests.TestRunner">
-        <test-method status="PASS" signature="setUpClass()[pri:0, instance:tests.TestRunner@6debcae2]" name="setUpClass" is-config="true" duration-ms="3613" started-at="2018-12-02T21:51:24Z" finished-at="2018-12-02T21:51:28Z">
+        <test-method status="PASS" signature="setUpClass()[pri:0, instance:tests.TestRunner@6debcae2]" name="setUpClass" is-config="true" duration-ms="2997" started-at="2018-12-02T22:23:48Z" finished-at="2018-12-02T22:23:51Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpClass -->
-        <test-method status="PASS" signature="scenario(cucumber.api.testng.PickleEventWrapper, cucumber.api.testng.CucumberFeatureWrapper)[pri:0, instance:tests.TestRunner@6debcae2]" name="scenario" duration-ms="36955" started-at="2018-12-02T21:51:28Z" description="Runs Cucumber Feature" data-provider="scenarios" finished-at="2018-12-02T21:52:05Z">
+        <test-method status="PASS" signature="scenario(cucumber.api.testng.PickleEventWrapper, cucumber.api.testng.CucumberFeatureWrapper)[pri:0, instance:tests.TestRunner@6debcae2]" name="scenario" duration-ms="77634" started-at="2018-12-02T22:23:51Z" description="Runs Cucumber Feature" data-provider="scenarios" finished-at="2018-12-02T22:25:08Z">
           <params>
             <param index="0">
               <value>
@@ -104,29 +104,29 @@
               <![CDATA[========= Comparing GOOG and NFLX =========<br/>]]>
             </line>
             <line>
-              <![CDATA[GOOG's current price is 1094.43<br/>]]>
+              <![CDATA[GOOG's current price is 30.38<br/>]]>
             </line>
             <line>
-              <![CDATA[The 52 week high is 1273.89<br/>]]>
+              <![CDATA[The 52 week high is 34.79<br/>]]>
             </line>
             <line>
-              <![CDATA[The 52 week low is 980.64<br/>]]>
+              <![CDATA[The 52 week low is 26.46<br/>]]>
             </line>
             <line>
-              <![CDATA[Today’s price of 1094.43 is 14% lower than the 52 week high and 12% higher than the 52 week low.<br/>]]>
+              <![CDATA[Today’s price of 30.38 is 13% lower than the 52 week high and 15% higher than the 52 week low.<br/>]]>
             </line>
             <line>
-              <![CDATA[GOOG has an EPS of 26.65.<br/>]]>
+              <![CDATA[GOOG has an EPS of 1.39.<br/>]]>
             </line>
             <line>
               <![CDATA[NFLX has an EPS of 2.8.<br/>]]>
             </line>
             <line>
-              <![CDATA[GOOG has higher EPS<br/>]]>
+              <![CDATA[NFLX has higher EPS<br/>]]>
             </line>
           </reporter-output>
         </test-method> <!-- scenario -->
-        <test-method status="PASS" signature="scenario(cucumber.api.testng.PickleEventWrapper, cucumber.api.testng.CucumberFeatureWrapper)[pri:0, instance:tests.TestRunner@6debcae2]" name="scenario" duration-ms="30185" started-at="2018-12-02T21:52:05Z" description="Runs Cucumber Feature" data-provider="scenarios" finished-at="2018-12-02T21:52:35Z">
+        <test-method status="PASS" signature="scenario(cucumber.api.testng.PickleEventWrapper, cucumber.api.testng.CucumberFeatureWrapper)[pri:0, instance:tests.TestRunner@6debcae2]" name="scenario" duration-ms="15552" started-at="2018-12-02T22:25:08Z" description="Runs Cucumber Feature" data-provider="scenarios" finished-at="2018-12-02T22:25:24Z">
           <params>
             <param index="0">
               <value>
@@ -166,7 +166,7 @@
             </line>
           </reporter-output>
         </test-method> <!-- scenario -->
-        <test-method status="PASS" signature="scenario(cucumber.api.testng.PickleEventWrapper, cucumber.api.testng.CucumberFeatureWrapper)[pri:0, instance:tests.TestRunner@6debcae2]" name="scenario" duration-ms="25875" started-at="2018-12-02T21:52:35Z" description="Runs Cucumber Feature" data-provider="scenarios" finished-at="2018-12-02T21:53:01Z">
+        <test-method status="PASS" signature="scenario(cucumber.api.testng.PickleEventWrapper, cucumber.api.testng.CucumberFeatureWrapper)[pri:0, instance:tests.TestRunner@6debcae2]" name="scenario" duration-ms="13801" started-at="2018-12-02T22:25:24Z" description="Runs Cucumber Feature" data-provider="scenarios" finished-at="2018-12-02T22:25:38Z">
           <params>
             <param index="0">
               <value>
@@ -206,7 +206,7 @@
             </line>
           </reporter-output>
         </test-method> <!-- scenario -->
-        <test-method status="PASS" signature="tearDownClass()[pri:0, instance:tests.TestRunner@6debcae2]" name="tearDownClass" is-config="true" duration-ms="39" started-at="2018-12-02T21:53:01Z" finished-at="2018-12-02T21:53:01Z">
+        <test-method status="PASS" signature="tearDownClass()[pri:0, instance:tests.TestRunner@6debcae2]" name="tearDownClass" is-config="true" duration-ms="36" started-at="2018-12-02T22:25:38Z" finished-at="2018-12-02T22:25:38Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDownClass -->
