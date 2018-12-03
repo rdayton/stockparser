@@ -21,6 +21,7 @@ public class StepDefinitions {
     public void i_have_stocks_and_I_want_to_compare(String initial, String compare) {
         this.initialStockPage = new StockPage(initial);
         this.comparisonPage = new StockPage(compare);
+        System.out.println("========= Comparing "+ initial + " and "+ compare + " =========");
     }
 
 

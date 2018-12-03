@@ -47,6 +47,8 @@ public class StockPage {
         WebElement searchBox = new WebDriverWait(driver, 15)
                 .until(ExpectedConditions.presenceOfElementLocated(By.xpath(searchXpath)));
         searchBox.sendKeys(symbol);
+
+        //prevent search from starting before all keys are entered
         WebDriverWait keysEntered = new WebDriverWait(driver, 10);
         keysEntered.until(ExpectedConditions.textToBePresentInElementLocated(By.id(searchId), symbol));
         searchBox.submit();
@@ -58,10 +60,11 @@ public class StockPage {
         WebElement price = new WebDriverWait(driver, 10)
                 .until(ExpectedConditions.presenceOfElementLocated(By.xpath(priceXpath)));
 
-        //data initially can briefly appear as N/A, so we wait until it is not N/A to get the current price
+        //data can briefly appear as N/A, so wait until it is not N/A to get the current price
         WebDriverWait waitForData = new WebDriverWait(driver, 5);
-        waitForData.until(ExpectedConditions.not(ExpectedConditions.textToBePresentInElement(price, "N/A")));
-        currentPrice = Double.parseDouble(price.getText());
+        //use xpath because element may have been replaced in the DOM when it was updated
+        waitForData.until(ExpectedConditions.not(ExpectedConditions.textToBePresentInElementLocated(By.xpath(priceXpath), "N/A")));
+        currentPrice = Double.parseDouble(price.getText().replaceAll(",", ""));
 
     }
 
@@ -74,13 +77,14 @@ public class StockPage {
         WebElement priceRangeElement = new WebDriverWait(driver, 10)
                 .until(ExpectedConditions.presenceOfElementLocated(By.xpath(priceRangeXpath)));
 
-        //data initially can briefly appear as N/A, so we wait until it is not N/A to get the current price
+        //data can briefly appear as N/A, so wait until it is not N/A to get the current price
         WebDriverWait waitForData = new WebDriverWait(driver, 5);
-        waitForData.until(ExpectedConditions.not(ExpectedConditions.textToBePresentInElement(priceRangeElement, "N/A")));
+        //use xpath because element may have been replaced in the DOM when it was updated
+        waitForData.until(ExpectedConditions.not(ExpectedConditions.textToBePresentInElementLocated(By.xpath(priceRangeXpath), "N/A")));
         String prices = priceRangeElement.getText();
         int mid = prices.indexOf("-");
         lowestPrice = Double.parseDouble(prices.substring(0, mid-1).replaceAll(",", ""));
-        highestPrice = Double.parseDouble(prices.substring(mid+1, prices.length()));
+        highestPrice = Double.parseDouble(prices.substring(mid+1, prices.length()).replaceAll(",", ""));
     }
 
     public Double getHigh(){
@@ -108,9 +112,11 @@ public class StockPage {
         WebElement epsElement = new WebDriverWait(driver,10)
                 .until(ExpectedConditions.presenceOfElementLocated(
                         By.xpath("//*[@id=\"quote-summary\"]/div[2]/table/tbody/tr[4]/td[2]/span")));
-        
+
+        //data can briefly appear as N/A, so wait until it is not N/A to get the current price
         WebDriverWait waitForData = new WebDriverWait(driver, 5);
-        waitForData.until(ExpectedConditions.not(ExpectedConditions.textToBePresentInElement(epsElement, "N/A")));
+        //use xpath because element may have been replaced in the DOM when it was updated
+        waitForData.until(ExpectedConditions.not(ExpectedConditions.textToBePresentInElementLocated(By.xpath(epsXpath), "N/A")));
         earningsPerShare = Double.parseDouble(epsElement.getText());
 
         return earningsPerShare;
