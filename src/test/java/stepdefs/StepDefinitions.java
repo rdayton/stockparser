@@ -86,9 +86,9 @@ public class StepDefinitions {
     @Then("I can determine which company has a higher EPS")
     public void i_can_determine_which_company_has_a_higher_EPS() {
         if(initialEps > comparisonEps){
-            Reporter.log(initialStockPage.getSymbol() + " has higher EPS<br/>");
+            Reporter.log(initialStockPage.getSymbol() + " has higher EPS<br/>", true);
         } else if (initialEps < comparisonEps){
-            Reporter.log(comparisonPage.getSymbol() + " has higher EPS<br/>");
+            Reporter.log(comparisonPage.getSymbol() + " has higher EPS<br/>", true);
         } else {
             Reporter.log(initialStockPage.getSymbol() + " and "+ comparisonPage.getSymbol() + " have equal EPS<br/>", true);
         }
